@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 80 15% 96%;
+    --foreground: 160 10% 12%;
+
+    --card: 80 10% 93%;
+    --card-foreground: 160 10% 12%;
+
+    --popover: 80 10% 93%;
+    --popover-foreground: 160 10% 12%;
+
+    --primary: 158 25% 28%;
+    --primary-foreground: 80 15% 96%;
+
+    --secondary: 80 12% 90%;
+    --secondary-foreground: 160 10% 12%;
+
+    --muted: 80 10% 90%;
+    --muted-foreground: 160 6% 45%;
+
+    --accent: 158 18% 38%;
+    --accent-foreground: 80 15% 96%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 80 15% 96%;
+
+    --border: 80 8% 86%;
+    --input: 80 8% 86%;
+    --ring: 158 25% 28%;
+
+    --radius: 0.75rem;
+
+    --sage-light: 80 12% 90%;
+    --sage-deep: 158 30% 22%;
+    --cream: 45 30% 95%;
+    --warm-ivory: 40 25% 97%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 160 10% 7%;
+    --foreground: 80 15% 92%;
+    --card: 160 10% 10%;
+    --card-foreground: 80 15% 92%;
+    --popover: 160 10% 10%;
+    --popover-foreground: 80 15% 92%;
+    --primary: 158 25% 55%;
+    --primary-foreground: 160 10% 7%;
+    --secondary: 160 10% 14%;
+    --secondary-foreground: 80 15% 92%;
+    --muted: 160 10% 14%;
+    --muted-foreground: 80 8% 55%;
+    --accent: 158 18% 45%;
+    --accent-foreground: 160 10% 7%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 80 15% 92%;
+    --border: 160 8% 16%;
+    --input: 160 8% 16%;
+    --ring: 158 25% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DM Sans", system-ui, sans-serif;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .section-divider {
+    @apply w-full border-t border-border;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center h-12 px-8 rounded-full text-sm font-semibold
+           bg-primary text-primary-foreground
+           hover:opacity-90 transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center h-12 px-8 rounded-full text-sm font-semibold
+           border-2 border-foreground/15 text-foreground
+           hover:bg-foreground/5 transition-all duration-200;
+  }
+
+  .tag-pill {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase
+           bg-primary/10 text-primary;
+  }
+}
